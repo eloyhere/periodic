@@ -190,9 +190,9 @@ The following defines fundamental relations and operations between vectors and s
 | Subtraction | Component-wise difference | Relative displacement, force decomposition | Adding inverse $a - b = a + (-b)$ | |
 | Scalar Multiplication | Multiply all components by a scalar | Scaling, intensity adjustment | Changes norm, preserves/reverses direction | Negative scalar reverses |
 | Dot Product (Inner) | $\vec{a}\cdot\vec{b} = \sum a_i b_i$ | Work, projection, energy coupling | Commutative, yields scalar | Zero if orthogonal |
-| Projection | $\operatorname{proj}_{\vec{b}}\vec{a} = \frac{\vec{a}\cdot\vec{b}}{\vec{b}\cdot\vec{b}}\vec{b}$ | Component along a given direction | Collinear with $\vec{b}$ | Zero if orthogonal |
+| Projection | $\text{proj}_{\vec{b}}\vec{a} = \frac{\vec{a}\cdot\vec{b}}{\vec{b}\cdot\vec{b}}\vec{b}$ | Component along a given direction | Collinear with $\vec{b}$ | Zero if orthogonal |
 | Cross Product (1D) | $a\times b := 0$ | No rotational degree of freedom | Always zero | No curl in 1D |
-| Cross Product (2D) | $z_1\times z_2 := \operatorname{Im}(\bar{z}_1 z_2) = ad - bc$ | Signed area, 2D vorticity | Scalar, anti-commutative | Positive = CCW, negative = CW |
+| Cross Product (2D) | $z_1\times z_2 := \text{Im}(\bar{z}_1 z_2) = ad - bc$ | Signed area, 2D vorticity | Scalar, anti-commutative | Positive = CCW, negative = CW |
 | Cross Product (3D) | $\vec{a}\times\vec{b}$, magnitude $\|\vec{a}\|\|\vec{b}\|\sin\theta$, direction by RHR | Torque, angular momentum, 3D vorticity | Anti-commutative, yields vector | Full 3D curl |
 | Complex Multiplication | Moduli multiply, arguments add | Amplitude modulation & phase rotation | Planar rotation & scaling | $i$ rotates by $90^\circ$ |
 | Quaternion Multiplication | Non-commutative, associative | Composition of 3D rotations | Order matters | Unit quats represent rotations |
@@ -209,8 +209,8 @@ The following defines fundamental relations and operations between vectors and s
 | Propagation | Time evolution of a vector field | Wave propagation, information transfer | Governed by grad, div, curl | First derivative = velocity |
 | Reflection | Mirror of vector across normal | Elastic collision, interface reflection | Incidence angle = reflection angle | Preserves norm, changes direction |
 | Refraction | Change of direction entering medium | Speed change, phase delay | Snell's Law | Ratio of norms relates to index |
-| Normal (1D) | $\operatorname{Normal}(a) := a i$ (lift to 2D) | Orthogonality requires higher dimension | Yields pure imaginary | No intrinsic orthogonality in 1D |
-| Normal (2D) | $\operatorname{Normal}(z) := z i$ (rotate $90^\circ$) | Orthogonal direction in plane | Remains in 2D | Multiplying by $i$ rotates $90^\circ$ |
+| Normal (1D) | $\text{Normal}(a) := a i$ (lift to 2D) | Orthogonality requires higher dimension | Yields pure imaginary | No intrinsic orthogonality in 1D |
+| Normal (2D) | $\text{Normal}(z) := z i$ (rotate $90^\circ$) | Orthogonal direction in plane | Remains in 2D | Multiplying by $i$ rotates $90^\circ$ |
 | Normal (3D) | Via cross product, perpendicular to plane | Reflection/refraction interface | Direction by RHR | Not unique (sign ambiguity) |
 | Polar Decomposition | Decompose complex/quat into norm and unit mod. | Separate intensity and rotation | $z = re^{i\theta}$ | Analyse strength vs. phase |
 
@@ -508,7 +508,9 @@ The wave's temporal form (waveform) yields a spectrum via sampling and Fourier t
 
 The relationship is summarised as:
 
-$\text{Field} \xrightarrow{\text{interference/coupling}} \text{Wave} \xrightarrow{\text{sampling+transform}} \text{Spectrum}$
+```
+Field → interference/coupling → Wave → sampling+transform → Spectrum
+```
 
 The reverse holds: spectra synthesise waves; wave energy distributions can alter field sources and vortices.
 
