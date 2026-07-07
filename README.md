@@ -1,6 +1,6 @@
 # Periodic Mathematics
 
-> “The Tao evolves into the Unary; The Unary evolves into the Binary; The Binary evolves into the Ternary; The Ternary evolves into the Universe.” — *Tao Te Ching*  
+> “The Trendency evolves into the Unary; The Unary evolves into the Binary; The Binary evolves into the Ternary; The Ternary evolves into the Universe.” — *Tao Te Ching*  
 > “Mathematics is the language with which God has written the universe.” — Galileo Galilei  
 > “No plain always slopes, nor trendency always closes.” — *I Ching*  
 
