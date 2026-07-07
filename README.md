@@ -1,563 +1,558 @@
-# Cyclical Mathematics
+# Periodic Mathematics
 
-> "The Tao gave birth to One, the One gave birth to Two, the Two gave birth to Three, and the Three gave birth to all myriad things." — *Tao Te Ching*
->
-> "Mathematics is the language with which God has written the universe." — Galileo Galilei
->
-> "Nothing is forever flat, nor does anything go without return." — *I Ching*
->
-> "The universe is the sum total of information and its evolving relationships; mathematics is the proper subset through which humanity comprehends the universe." — Cyclical Mathematics
+> “The Tao gave birth to One; One gave birth to Two; Two gave birth to Three; Three gave birth to all myriad things.” — *Tao Te Ching*
+> “Mathematics is the language with which God has written the universe.” — Galileo Galilei
+> “No plain always slopes, nor guidance always returns.” — *I Ching*
 
 ---
 
-## Preface
+## Foundational Postulates
 
-Human understanding of the world begins with distinction—the carving of chaotic experience into recognisable units. A single leaf, a heartbeat, a sunrise. This primal discretisation marks the inception of all cognition and mathematics.
+The following postulates do not constitute mathematical derivations but serve as philosophical starting points and research motivations for Periodic Mathematics.
 
-The *Tao Te Ching* states that "the Tao gave birth to One...", revealing the generative process from an indivisible whole to discrete units. The *I Ching* observes that "nothing is forever flat...", pointing to a fundamental characteristic of cosmic motion: all change unfolds through cycles and returns. Yet these ancient insights have long remained metaphorical, lacking formal expression.
+**Postulate 1 (Ontology of Information)**
+The fundamental constituents of the universe are information and its relations; matter and energy are derivative phenomena arising from relational structures of information.
 
-The objective of Cyclical Mathematics is to reformulate these intuitions regarding discrete generation and cyclical evolution using rigorous mathematical language. It eschews specific cultural symbols or traditional terminology, proceeding instead from three foundational principles:
+**Postulate 2 (Mathematics as a Proper Subset)**
+Mathematics represents that subset of the universe’s informational relations which is formalisable and computable. Not all informational relations have been mathematised.
 
-1.  **The universe is the sum total of information and its evolving relationships** — the information field, rather than matter or energy, constitutes the fundamental reality.
-2.  **Mathematics is the proper subset through which humanity comprehends the universe** — mathematics formally captures the computable aspects of informational relationships.
-3.  **Cyclicity is a universal feature of information evolution** — under the influence of gradient, divergence, and curl, the information field necessarily gives rise to discrete cyclical structures.
+**Postulate 3 (Universality of Periodicity)**
+Periodicity is a universal characteristic of information evolution. Under appropriate conditions, stable periodic structures emerge naturally from informational relations.
 
-This document outlines the foundational framework of Cyclical Mathematics. We commence with the construction of numbers, proceed through vector and function theory, and culminate in field theory and its fundamental operators. No metaphysical or traditional cultural terms are employed; the exposition relies solely on the common language of mathematics and physics.
+> The mathematical treatment commences in the subsequent section; henceforth, the aforementioned philosophical postulates shall not be invoked.
 
 ---
 
 ## Methodology
 
-The construction of Cyclical Mathematics adheres to four cardinal rules:
+Periodic Mathematics adopts all standard constructions of modern mathematics without redefining extant concepts. Its programme is as follows:
 
-1.  **Cognitive-Genetic Priority**
-    The definitional order of mathematical objects must align with the logic of cognition: commencing from the simplest discrete distinctions and constructing increasingly complex relationships layer by layer. No concept is presupposed before its construction.
-2.  **Non-Circular Construction**
-    Each step utilises only rigorously defined objects. Real numbers and calculus may not be used to define natural numbers or integers; the concept of completeness may not precede the rational numbers.
-3.  **Discrete Origin**
-    The cognisable world originates in discrete distinction — the minimal unit of information. Continuity is a product of construction, not a presupposed substrate.
-4.  **Symmetry as Directionality**
-    Each new class of number introduces a novel symmetry operation: integers introduce additive inverses (0-symmetry); rationals introduce multiplicative inverses (1-symmetry); complexes introduce phase rotation (unit circle symmetry); quaternions introduce three-dimensional non-commutative rotation. These symmetries bestow "direction" upon numbers, enabling them to express orientation within specific relationships, beyond mere magnitude.
-
-Guided by this methodology, we construct the standard number systems beginning with Peano's axioms, develop vector and function theory, and ultimately establish field theory.
+1.  To elucidate **symmetry and directionality** as the foundations of periodicity;
+2.  To furnish a rigorous definition of periodicity within the language of group theory, proceeding from symmetry;
+3.  To reveal the structural correspondence between number system extensions and the accretion of symmetry groups;
+4.  To establish corresponding periodic functions for each number system;
+5.  To subsume Fourier analysis and other integral transforms within a harmonic analysis framework on periodic groups;
+6.  To provide a categorical description unifying the computation of waves and spectra.
 
 ---
 
-## Number Systems
+## Part I: Symmetry and Directionality—The Basis of Periodicity
 
-### Definition
+The root of periodicity lies in symmetry. A system exhibits periodic behaviour when a transformation exists under which the system remains invariant. The collection of such transformations constitutes a group, whilst the directionality of the group action imparts a "sense" to the period. This chapter expounds how symmetry engenders directionality, and how directionality serves as the mathematical foundation of periodicity.
 
-Numbers are the symbolisation of stable structures within informational relationships. Number systems are algebraic structures extended hierarchically according to symmetry and completeness. Each stage introduces a new type of relationship, realised through strict equivalence class construction or completion.
+### 1.1 Symmetry
 
-### Natural Numbers $\mathbb{N}$
+**Definition 1 (Symmetry)**
+Let $S$ be a set. A symmetry on $S$ is an invertible transformation $\sigma: S \to S$ that preserves a specified structure. The set of all symmetries on $S$, under composition, forms a group termed the **symmetry group** (or automorphism group) of $S$.
+
+**Example 1 (Geometric Symmetry)**
+*   The symmetry group of the unit circle $S^1$ is the orthogonal group $O(2)$ (all rotations and reflections).
+*   The symmetry group of a regular $n$-gon is the dihedral group $D_n$.
+*   The symmetry group of the full space $\mathbb{R}^n$ under translation is the additive group $\mathbb{R}^n$.
+
+**Example 2 (Algebraic Symmetry)**
+*   The integer additive group $(\mathbb{Z},+)$ admits the symmetry $x \mapsto -x$. This symmetry generates the group $C_2$ (the cyclic group of order two).
+*   The multiplicative group of non-zero rationals $(\mathbb{Q}^\times,\times)$ admits the symmetry $x \mapsto x^{-1}$.
+*   The complex field $\mathbb{C}$ admits rotational symmetry $z \mapsto e^{i\theta}z$, constituting the group $U(1)$.
+
+### 1.2 Directionality
+
+**Definition 2 (Directionality)**
+Let $G$ be a Lie group acting on a smooth manifold $M$, with $\mathfrak{g}$ its Lie algebra. For a generator $X \in \mathfrak{g}$, the vector field $X_M(p)$ induced at $p \in M$ gives the infinitesimal direction of the $G$-action at $p$. If $G$ is discrete, direction is given by the progression of the generator within the state space. Multiple generators entail multiple independent directional dimensions.
+
+Direction does not exist independently of symmetry; it is the product of the group action. Distinct generators of the same group may yield distinct directions.
+
+### 1.3 Three Fundamental Symmetries and Directions
+
+In the extension of number systems, three fundamental symmetric operations recur, each corresponding to a basic type of direction.
+
+**(1) Additive Symmetry: 0-Symmetry and Displacement Direction**
+Within the integers $\mathbb{Z}$, the symmetric operation $x \mapsto -x$ fixes $0$. This symmetry partitions the integers into positive and negative semi-axes. Positive numbers denote accumulation along one direction; negatives denote accumulation along the opposite. The resulting direction is termed the **displacement direction**.
+*   **Property**: Additive symmetry is an involution—applying it twice yields the identity: $-(-x) = x$. It generates the group $C_2$.
+
+**(2) Multiplicative Symmetry: 1-Symmetry and Scaling Direction**
+Within the non-zero rationals $\mathbb{Q}^\times$, the symmetric operation $x \mapsto x^{-1}$ fixes $1$. This symmetry partitions the positive rationals into regions of magnification ($x > 1$) and diminution ($0 < x < 1$). The resulting direction is termed the **scaling direction**.
+*   **Property**: Multiplicative symmetry is also an involution: $(x^{-1})^{-1} = x$. However, scaling direction is continuous—there exist degrees of magnification and diminution, not merely discrete directions.
+
+**(3) Rotational Symmetry: $i$-Symmetry and Phase Direction**
+Within the complex plane $\mathbb{C}$, the symmetric operation $z \mapsto iz$ (multiplication by the imaginary unit $i$) rotates by $90^\circ$. Powers of $i$ generate the discrete rotation group $\{1, i, -1, -i\}$, corresponding to four cardinal directions. Continuous rotation constitutes the group $U(1)$ via $z \mapsto e^{i\theta}z$. The resulting direction is termed the **phase direction** or **rotational direction**.
+*   **Property**: Rotational symmetry is not an involution ($i^2 = -1 \neq 1$); four applications are required to return to unity ($i^4 = 1$). In three dimensions, the non-commutativity of rotation is described by $SU(2)$ (the group of unit quaternions).
+
+### 1.4 From Symmetry to Periodicity
+
+Symmetry is conceptually prior to periodicity. Periodicity is the structure manifested by the repeated application of a symmetry in a specific direction.
+
+**Proposition 1 (Symmetry Generates Closed Periods and Orbits)**
+Let $G$ be a symmetry group, and $H = \langle g \rangle \subset G$ the cyclic subgroup generated by a symmetric operation $g \in G$.
+*   If $g$ has finite order (i.e., $\exists n \in \mathbb{N}^+$ s.t. $g^n = e$), the iteration of $g$ forms a closed period of length $n$.
+*   If $g$ has infinite order (i.e., $g^k \neq e \; \forall k \neq 0$), the iteration forms an infinite orbit, never returning to the origin.
+
+**Proof**: If $g^n = e$, the sequence $s, g\cdot s, g^2\cdot s, \dots$ returns to $s$ after $n$ steps, forming a cycle of length $n$. If $g$ has infinite order, the sequence contains no repetitions, forming an infinite orbit. $\square$
+
+**Corollary 1**: The three fundamental symmetries correspond to three basic types of periods or orbits:
+*   Additive Symmetry ($C_2$) → Two-state period (alternation of positive/negative)
+*   Multiplicative Symmetry (Involution $x \mapsto x^{-1}$) → Geometric orbit (alternation of magnification/diminution)
+*   Rotational Symmetry ($U(1)$) → Circular period (phase cycle)
+
+### 1.5 Centres of Symmetry: 0, 1, $i$
+
+Within the three fundamental symmetries, three special numbers act as the "centres" or "generators".
+*   **0** is the fixed point of additive symmetry $x \mapsto -x$. It demarcates positive from negative and serves as the datum for displacement.
+*   **1** is the fixed point of multiplicative symmetry $x \mapsto x^{-1}$. It demarcates magnification from diminution and serves as the datum for scaling.
+*   **$i$** is the generator of the rotation group $U(1)$. Multiplication by $i$ corresponds to a $90^\circ$ rotation. Its powers generate the entire discrete rotation group.
+
+> These three numbers will be linked interpretively to gradient, divergence, and curl in field theory (see Part VII). This linkage is theoretical interpretation, not an established mathematical theorem.
+
+---
+
+## Part II: Number Systems
+
+Numbers are symbolisations of stable structures within informational relations. Number systems are algebraic structures extended hierarchically according to symmetry and completeness. Each extension introduces new symmetries, thereby introducing new directionalities.
+
+### 2.1 Natural Numbers $\mathbb{N}$
 
 **Axioms (Peano Arithmetic)**
-
 1.  $0$ is a natural number.
 2.  Every natural number $n$ has a unique successor $S(n)$, which is also a natural number.
 3.  $0$ is not the successor of any natural number.
-4.  If $S(n) = S(m)$, then $n = m$.
-5.  Axiom of Induction: If a property $P$ holds for $0$, and $P(n) \Rightarrow P(S(n))$ for all $n$, then $P$ holds for all natural numbers.
+4.  $S(n) = S(m) \implies n = m$.
+5.  Induction Axiom: If a property $P$ holds for $0$, and $P(n) \implies P(S(n))$ for all $n$, then $P$ holds for all natural numbers.
 
-**Convention:** $1:=S(0),\;2:=S(1),\;\ldots$
+**Convention**: $1:=S(0),\;2:=S(1),\;\ldots$
 
 **Operations (Recursive Definitions)**
--   Addition: $n+0:=n,\; n+S(m):=S(n+m)$
--   Multiplication: $n\times 0:=0,\; n\times S(m):=(n\times m)+n$
--   Order: $n\leq m\iff \exists k\in\mathbb{N},\; n+k=m$
+*   Addition: $n+0:=n,\; n+S(m):=S(n+m)$
+*   Multiplication: $n\times 0:=0,\; n\times S(m):=(n\times m)+n$
+*   Order: $n\leq m\iff \exists k\in\mathbb{N},\; n+k=m$
 
-$(\mathbb{N},+,\times,\leq)$ forms an ordered commutative semiring. Natural numbers possess only "magnitude," lacking inverses and symmetry. They are pure scalars, answering "how many discrete units."
+$(\mathbb{N},+,\times,\leq)$ forms an ordered commutative semiring. Naturals possess only "magnitude", lacking inverses and symmetry. They are pure scalars answering "how many discrete units".
 
-### Integers $\mathbb{Z}$
+### 2.2 Integers $\mathbb{Z}$
 
-**Construction** Define an equivalence relation $\sim$ on $\mathbb{N}\times\mathbb{N}$:
+**Construction** Define equivalence $\sim$ on $\mathbb{N}\times\mathbb{N}$:
 $(a,b)\sim(c,d) \iff a+d = b+c$
 
-The set of integers $\mathbb{Z}:=(\mathbb{N}\times\mathbb{N})/\sim$. The equivalence class $[(a,b)]$ represents the displacement "from $b$ to $a$."
+The integers $\mathbb{Z}:=(\mathbb{N}\times\mathbb{N})/\sim$. The equivalence class $[(a,b)]$ represents the displacement "from $b$ to $a$".
 
 **Operations**
--   Addition: $[(a,b)]+[(c,d)]:=[(a+c,\;b+d)]$
--   Zero element: $0_{\mathbb{Z}}:=[(0,0)]$
--   Additive inverse: $-[(a,b)]:=[(b,a)]$
--   Multiplication: $[(a,b)]\times[(c,d)]:=[(ac+bd,\;ad+bc)]$
--   Unit element: $1_{\mathbb{Z}}:=[(1,0)]$
--   Order: $[(a,b)]\leq[(c,d)]\iff a+d\leq b+c$
+*   Addition: $[(a,b)]+[(c,d)]:=[(a+c,\;b+d)]$
+*   Zero: $0_{\mathbb{Z}}:=[(0,0)]$
+*   Additive Inverse: $-[(a,b)]:=[(b,a)]$
+*   Multiplication: $[(a,b)]\times[(c,d)]:=[(ac+bd,\;ad+bc)]$
+*   Unity: $1_{\mathbb{Z}}:=[(1,0)]$
+*   Order: $[(a,b)]\leq[(c,d)]\iff a+d\leq b+c$
 
-$(\mathbb{Z},+,\times,\leq)$ forms an ordered commutative ring. Every element possesses an additive inverse, yielding 0-symmetry: for any integer $x$, there exists a unique $-x$ such that $x+(-x)=0$. This symmetry grants integers "directional displacement"—positive values indicate accumulation in one direction, negative values in the opposite. Integers may be viewed as vectors on a one-dimensional lattice (vectors in the $\mathbb{Z}$-module sense).
+$(\mathbb{Z},+,\times,\leq)$ forms an ordered commutative ring. Every element possesses an additive inverse, yielding the additive symmetry about $0$. Periodic Mathematics interprets this as the algebraic source of displacement direction. Integers may be viewed as $\mathbb{Z}$-module vectors on a 1D lattice.
 
-Natural embedding: $n\mapsto[(n,0)]$ preserves additive and multiplicative structure.
+**Natural Embedding**: $n\mapsto[(n,0)]$ preserves additive and multiplicative structure.
 
-### Rational Numbers $\mathbb{Q}$
+### 2.3 Rational Numbers $\mathbb{Q}$
 
 **Construction** Let $\mathbb{Z}^\times:=\mathbb{Z}\setminus\{0\}$. Define $\approx$ on $\mathbb{Z}\times\mathbb{Z}^\times$:
 $(a,b)\approx(c,d) \iff a\times d = b\times c$
 
-The set of rational numbers $\mathbb{Q}:=(\mathbb{Z}\times\mathbb{Z}^\times)/\approx$. Equivalence classes are denoted $\frac{a}{b}$.
+The rationals $\mathbb{Q}:=(\mathbb{Z}\times\mathbb{Z}^\times)/\approx$. Equivalence classes are denoted $\frac{a}{b}$.
 
 **Operations**
--   Addition: $\frac{a}{b}+\frac{c}{d}:=\frac{a\times d+b\times c}{b\times d}$
--   Zero element: $\frac{0}{1}$; Additive inverse: $-\frac{a}{b}:=\frac{-a}{b}$
--   Multiplication: $\frac{a}{b}\times\frac{c}{d}:=\frac{a\times c}{b\times d}$
--   Unit element: $\frac{1}{1}$; Multiplicative inverse: if $a\neq 0$, $(\frac{a}{b})^{-1}:=\frac{b}{a}$
--   Order: $\frac{a}{b}>0\iff a\times b>0$, with total order derived accordingly.
+*   Addition: $\frac{a}{b}+\frac{c}{d}:=\frac{a\times d+b\times c}{b\times d}$
+*   Zero: $\frac{0}{1}$; Additive Inverse: $-\frac{a}{b}:=\frac{-a}{b}$
+*   Multiplication: $\frac{a}{b}\times\frac{c}{d}:=\frac{a\times c}{b\times d}$
+*   Unity: $\frac{1}{1}$; Multiplicative Inverse: if $a\neq 0$, $(\frac{a}{b})^{-1}:=\frac{b}{a}$
+*   Order: $\frac{a}{b}>0\iff a\times b>0$, extending to total order.
 
-$(\mathbb{Q},+,\times,\leq)$ forms an ordered field. Non-zero elements possess not only additive inverses (0-symmetry) but also multiplicative inverses (1-symmetry): for any $x\neq 0$, there exists $x^{-1}$ such that $x\times x^{-1}=1$. This symmetry grants rationals "scaling direction"—$x$ and $x^{-1}$ are symmetric about 1, representing magnification and reduction respectively. Natural embedding: $n\mapsto\frac{n}{1}$.
+$(\mathbb{Q},+,\times,\leq)$ forms an ordered field. Non-zero elements possess both additive inverses (0-symmetry) and multiplicative inverses, yielding multiplicative symmetry about $1$. Periodic Mathematics interprets this as the algebraic source of scaling direction—$x$ and $x^{-1}$ are symmetric about $1$, representing magnification and diminution respectively.
 
-### Real Numbers $\mathbb{R}$
+**Integer Embedding**: $n\mapsto\frac{n}{1}$.
 
-**Construction (Dedekind Cut)** The set $\mathbb{R}$ consists of all lower sets $L\subset\mathbb{Q}$ satisfying:
+### 2.4 Real Numbers $\mathbb{R}$
+
+**Construction (Dedekind Cuts)** The reals $\mathbb{R}$ consist of all lower sets $L\subset\mathbb{Q}$ satisfying:
 1.  $L\neq\emptyset$, $L\neq\mathbb{Q}$.
 2.  $L$ has no greatest element.
-3.  If $x\in L$, $y\in\mathbb{Q}$, and $y<x$, then $y\in L$ (downward closure).
+3.  If $x\in L$ and $y\in\mathbb{Q}$ with $y<x$, then $y\in L$ (downward closure).
 
-A rational $q$ corresponds to the lower set $\{x\in\mathbb{Q}\mid x<q\}$.
+A rational $q$ corresponds to the cut $\{x\in\mathbb{Q}\mid x<q\}$.
 
 **Operations**
--   Order: $r\leq s\iff L_r\subseteq L_s$
--   Addition: $L_{r+s}:=\{x+y\mid x\in L_r,\;y\in L_s\}$
--   Multiplication: Defined first for positive reals as $\{xy\mid x\in L_r,y\in L_s,x,y>0\}\cup\mathbb{Q}_{\leq 0}$, extended by sign.
+*   Order: $r\leq s\iff L_r\subseteq L_s$
+*   Addition: $L_{r+s}:=\{x+y\mid x\in L_r,\;y\in L_s\}$
+*   Multiplication: Defined first for positives as $\{xy\mid x\in L_r,y\in L_s,x,y>0\}\cup\mathbb{Q}_{\leq 0}$, extended by sign.
 
-$\mathbb{R}$ satisfies the least upper bound property (completeness). Reals retain additive and multiplicative inverses (0 and 1-symmetry) whilst introducing continuity. They are the natural language for continuous field potentials: intensity, density, and rates of change are ultimately expressed via real numbers. The reals themselves form a one-dimensional $\mathbb{R}$-vector space, where each element acts as its own "position vector."
+$\mathbb{R}$ satisfies the least upper bound property (completeness). Reals retain additive/multiplicative inverses and introduce continuity.
 
-### Complex Numbers $\mathbb{C}$
+### 2.5 Complex Numbers $\mathbb{C}$
 
-**Construction** $\mathbb{C}:=\mathbb{R}^2$. Addition is component-wise; multiplication is defined as:
+**Construction** $\mathbb{C}:=\mathbb{R}^2$. Addition is component-wise; multiplication is defined:
 $(a,b)\times(c,d):=(ac-bd,\;ad+bc)$
 
-Let $a+bi:=(a,b)$, $i:=(0,1)$, thus $i^2=-1$.
+Denote $a+bi:=(a,b)$, $i:=(0,1)$, whence $i^2=-1$.
 
-**Algebraic Structure** $\mathbb{C}$ is a two-dimensional commutative $\mathbb{R}$-algebra and a field. Every non-zero complex has an inverse $(a+bi)^{-1}=\frac{a-bi}{a^2+b^2}$.
+**Algebraic Structure** $\mathbb{C}$ is a 2D commutative $\mathbb{R}$-algebra and a field. Every non-zero complex has inverse $(a+bi)^{-1}=\frac{a-bi}{a^2+b^2}$.
 
 **Polar Form and Rotational Symmetry**
-Any $z\in\mathbb{C}$ can be written as $z=re^{i\theta}$, where $r=|z|=\sqrt{a^2+b^2}$ is the modulus and $\theta$ the argument. Multiplication $z\mapsto e^{i\phi}z$ preserves modulus whilst increasing the argument by $\phi$, effecting a plane rotation. The unit complex group $\{e^{i\theta}\}$ is isomorphic to $U(1)$. Beyond additive and multiplicative symmetry, complexes introduce unit circle rotational symmetry: the imaginary unit $i$ acts as a $90^\circ$ rotation operator. This makes complexes the natural vehicle for planar curl effects.
+Any $z\in\mathbb{C}$ may be written $z=re^{i\theta}$, where $r=|z|=\sqrt{a^2+b^2}$ is the modulus and $\theta$ the argument. Multiplication $z\mapsto e^{i\phi}z$ preserves modulus whilst increasing the argument by $\phi$, i.e., a plane rotation. The unit complex group $\{e^{i\theta}\}$ is isomorphic to $U(1)$. Periodic Mathematics interprets this as the algebraic carrier of phase rotation direction.
 
-### Quaternions $\mathbb{H}$
+### 2.6 Quaternions $\mathbb{H}$
 
-**Construction** $\mathbb{H}:=\mathbb{R}^4$, with elements $q=a+bi+cj+dk$. Addition is component-wise. Multiplication follows bilinear expansion from:
--   $i^2=j^2=k^2=ijk=-1$
--   $ij=k,\; ji=-k$; $jk=i,\; kj=-i$; $ki=j,\; ik=-j$
+**Construction** The quaternions $\mathbb{H}:=\mathbb{R}^4$, with elements $q=a+bi+cj+dk$. Addition is component-wise. Multiplication extends bilinearly from:
+*   $i^2=j^2=k^2=ijk=-1$
+*   $ij=k,\; ji=-k$; $jk=i,\; kj=-i$; $ki=j,\; ik=-j$
 
-Multiplication is non-commutative but associative. $\mathbb{H}$ is a non-commutative $\mathbb{R}$-division algebra.
+Multiplication is associative but non-commutative. $\mathbb{H}$ is a non-commutative $\mathbb{R}$-division algebra.
 
-**Conjugate and Norm** $\bar{q}:=a-bi-cj-dk$, $|q|:=\sqrt{a^2+b^2+c^2+d^2}$. Inverse of a non-zero element: $q^{-1}=\bar{q}/|q|^2$.
+**Conjugate and Norm** $\bar{q}:=a-bi-cj-dk$, $|q|:=\sqrt{a^2+b^2+c^2+d^2}$. Inverse of non-zero: $q^{-1}=\bar{q}/|q|^2$.
 
-**Rotational Symmetry** The unit quaternion group $S^3$ is isomorphic to $SU(2)$, implementing three-dimensional rotations via $v\mapsto qvq^{-1}$ ($v$ being a pure imaginary quaternion). The non-commutativity of different axis rotations corresponds to the non-commutativity of quaternion multiplication. Quaternions extend complex planar rotation to full three-dimensional non-commutative rotational symmetry, serving as the algebraic embodiment of spatial curl structure.
+**Rotational Symmetry** The unit quaternions $S^3$ are isomorphic to $SU(2)$. Rotation in 3D is effected via $v\mapsto qvq^{-1}$ ($v$ a pure imaginary quaternion). The non-commutativity of rotations about different axes corresponds to the non-commutativity of quaternion multiplication.
 
-### Overview of Number Systems
+### 2.7 Overview of Number Systems and Symmetry Centres
 
-| Number System | Symmetry | Type of Direction |
+| Number System | New Symmetry Introduced | Interpretation in Periodic Mathematics |
 | :--- | :--- | :--- |
 | $\mathbb{N}$ | None | Pure magnitude |
-| $\mathbb{Z}$ | Additive (0-symmetry) | Displacement (positive/negative) |
-| $\mathbb{Q}$ | Additive + Multiplicative (1-symmetry) | Scaling (magnify/reduce) |
-| $\mathbb{R}$ | Above + Continuity & Completeness | Continuous intensity & limit direction |
-| $\mathbb{C}$ | Above + Planar Rotational Symmetry $U(1)$ | Phase rotation direction |
-| $\mathbb{H}$ | Above + 3D Rotational Symmetry $SU(2)$ | Spatial non-commutative rotation direction |
+| $\mathbb{Z}$ | Additive symmetry $x\mapsto -x$ (0-symmetry) | Displacement direction |
+| $\mathbb{Q}$ | Multiplicative symmetry $x\mapsto x^{-1}$ (1-symmetry) | Scaling direction |
+| $\mathbb{R}$ | Completion | Continuous intensity |
+| $\mathbb{C}$ | $U(1)$ rotational symmetry | Phase rotation direction |
+| $\mathbb{H}$ | $SU(2)$ non-abelian rotational symmetry | Spatial rotation direction |
+
+Three special numbers recur throughout this hierarchy. **0** is the additive identity and centre of additive inversion—demarcating positive from negative. **1** is the multiplicative identity and centre of multiplicative inversion—demarcating magnification from diminution. **$i$** is the generator of the rotation group $U(1)$—multiplication by $i$ effects a $90^\circ$ rotation.
 
 ---
 
-## Vectors
+## Part III: Vectors
 
-### Definition
+Vectors are elements of modules or vector spaces over a scalar field (or coefficient ring). Each number system, serving as a scalar field, naturally induces a corresponding directional structure.
 
-A vector is an ordered tuple of numbers, used to represent quantities possessing both magnitude and direction. Depending on the underlying number system, vectors may be constructed over integers, rationals, reals, complexes, or quaternions. A vector space requires closure under addition and scalar multiplication, satisfying the relevant axioms.
+### 3.1 Properties of Vectors over Various Number Systems
 
--   $\mathbb{Z}^n$: Integer vectors, forming a lattice ($\mathbb{Z}$-module).
--   $\mathbb{Q}^n$: Rational vectors, forming a $\mathbb{Q}$-vector space.
--   $\mathbb{R}^n$: Real vectors, the standard Euclidean vector space.
--   $\mathbb{C}^n$: Complex vectors, basis of unitary spaces, carrying phase and rotation information.
--   $\mathbb{H}^n$: Quaternion vectors, describing 3D rotations and non-commutative transformations.
-
-Fundamental operations include addition, scalar multiplication, inner products, and outer products (cross products). Vectors over different number systems possess distinct algebraic structures and geometric meanings. Any number system beyond the naturals exhibits some form of symmetry, allowing its elements to be treated as vectors: integers have displacement direction, rationals have scaling direction, complexes have phase direction, and quaternions have 3D rotation direction.
-
-### Properties of Vector Types
-
-| Vector Type | Component Field | Norm Definition | Direction Representation | Typical Operations | Physical Correspondence |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| Integer Vector | $\mathbb{Z}$ | Manhattan distance or lattice norm | Sign and ratio of components | Addition, subtraction, scalar mult. (integer) | Lattice displacement, discrete steps |
-| Rational Vector | $\mathbb{Q}$ | Euclidean norm (sqrt may be irrational) | Ratio of components | Addition, scalar mult. (rational), dot product | Scaled positions |
-| Real Vector | $\mathbb{R}$ | $\sqrt{\sum x_i^2}$ | Angle with coordinate axes | Addition, scalar mult., dot/cross product (3D) | Velocity, force, field strength |
-| Complex Vector | $\mathbb{C}$ | $\sqrt{\sum \|z_i\|^2}$ | Argument and relative phase | Addition, scalar mult. (complex), inner product | EM wave amplitude/phase, quantum states |
-| Quaternion Vector | $\mathbb{H}$ | $\sqrt{\sum \|q_i\|^2}$ | Rotation axis and angle | Addition, scalar mult. (quaternion), non-comm. mult. | 3D rotation, rigid body attitude |
-
-### Vector Relations and Operations
-
-The following defines fundamental relations and operations between vectors and scalars. All definitions are based on pure mathematical and physical meaning, without reference to specific symbolic systems.
-
-| Concept | Mathematical Meaning | Physical Meaning | Property | Note |
+| Vector Type | Scalar Field | Norm Definition | Direction Representation | Physical Correspondence |
 | :--- | :--- | :--- | :--- | :--- |
-| Addition | Component-wise sum | Force composition, displacement superposition | Commutative, associative | Parallelogram law |
-| Subtraction | Component-wise difference | Relative displacement, force decomposition | Adding inverse $a - b = a + (-b)$ | |
-| Scalar Multiplication | Multiply all components by a scalar | Scaling, intensity adjustment | Changes norm, preserves/reverses direction | Negative scalar reverses |
-| Dot Product (Inner) | $\vec{a}\cdot\vec{b} = \sum a_i b_i$ | Work, projection, energy coupling | Commutative, yields scalar | Zero if orthogonal |
-| Projection | $\text{proj}_{\vec{b}}\vec{a} = \frac{\vec{a}\cdot\vec{b}}{\vec{b}\cdot\vec{b}}\vec{b}$ | Component along a given direction | Collinear with $\vec{b}$ | Zero if orthogonal |
-| Cross Product (1D) | $a\times b := 0$ | No rotational degree of freedom | Always zero | No curl in 1D |
-| Cross Product (2D) | $z_1\times z_2 := \text{Im}(\bar{z}_1 z_2) = ad - bc$ | Signed area, 2D vorticity | Scalar, anti-commutative | Positive = CCW, negative = CW |
-| Cross Product (3D) | $\vec{a}\times\vec{b}$, magnitude $\|\vec{a}\|\|\vec{b}\|\sin\theta$, direction by RHR | Torque, angular momentum, 3D vorticity | Anti-commutative, yields vector | Full 3D curl |
-| Complex Multiplication | Moduli multiply, arguments add | Amplitude modulation & phase rotation | Planar rotation & scaling | $i$ rotates by $90^\circ$ |
-| Quaternion Multiplication | Non-commutative, associative | Composition of 3D rotations | Order matters | Unit quats represent rotations |
-| Division | Multiplication by inverse (where defined) | Attenuation, inverse filtering, inverse rotation | Requires existence of inverse | Complex: $z_1/z_2 = z_1\bar{z}_2/\|z_2\|^2$ |
-| Real Part | Take real/scalar component, zero others | Extract linear component (gradient/divergence) | Project onto $\mathbb{R}$ axis | Zero for pure imaginaries |
-| Imaginary Part | Take imaginary/vector component, zero real | Extract rotational component (curl) | Project onto pure imaginary space | Identity for pure imaginaries |
-| Normalisation | Divide vector by its norm | Extract unit direction | Norm becomes 1 | Used for comparing directions |
-| Parallel | Vectors are scalar multiples (real coeff.) | Motion in same/opposite direction | Angle $0^\circ$ or $180^\circ$ | Dot product = $\pm$ product of norms |
-| Orthogonal | Dot product is zero | Independent components, orthogonal decomposition | Angle $90^\circ$ or $270^\circ$ | Requires at least 2D |
-| Angle | Angular difference between vectors | Phase difference, directional deviation | $\cos\theta = \frac{\vec{a}\cdot\vec{b}}{\|\vec{a}\|\|\vec{b}\|}$ | Arg diff for complexes |
-| Distance | Norm of difference vector | Spatial separation, potential difference | Satisfies triangle inequality | Euclidean or Manhattan |
-| Common Origin | Vectors share starting point | Common reference frame, common source | Shared origin | Facilitates composition |
-| Common Terminus | Vectors share end point | Energy convergence, common target | Shared terminus | Paths to a single point |
-| Propagation | Time evolution of a vector field | Wave propagation, information transfer | Governed by grad, div, curl | First derivative = velocity |
-| Reflection | Mirror of vector across normal | Elastic collision, interface reflection | Incidence angle = reflection angle | Preserves norm, changes direction |
-| Refraction | Change of direction entering medium | Speed change, phase delay | Snell's Law | Ratio of norms relates to index |
-| Normal (1D) | $\text{Normal}(a) := a i$ (lift to 2D) | Orthogonality requires higher dimension | Yields pure imaginary | No intrinsic orthogonality in 1D |
-| Normal (2D) | $\text{Normal}(z) := z i$ (rotate $90^\circ$) | Orthogonal direction in plane | Remains in 2D | Multiplying by $i$ rotates $90^\circ$ |
-| Normal (3D) | Via cross product, perpendicular to plane | Reflection/refraction interface | Direction by RHR | Not unique (sign ambiguity) |
-| Polar Decomposition | Decompose complex/quat into norm and unit mod. | Separate intensity and rotation | $z = re^{i\theta}$ | Analyse strength vs. phase |
+| Natural Vector | $\mathbb{N}^n$ | Sum of coordinates | Sequence advancement | Step counting |
+| Integer Vector | $\mathbb{Z}^n$ | Manhattan distance or lattice norm | Sign and ratio of components | Lattice displacement, discrete shift |
+| Rational Vector | $\mathbb{Q}^n$ | Euclidean norm | Ratio of components | Position after proportional scaling |
+| Real Vector | $\mathbb{R}^n$ | $\sqrt{\sum x_i^2}$ | Angle with coordinate axes | Velocity, force, field strength |
+| Complex Vector | $\mathbb{C}^n$ | $\sqrt{\sum \|z_i\|^2}$ | Argument and relative phase | EM wave amplitude/phase, quantum states |
+| Quaternion Vector | $\mathbb{H}^n$ | $\sqrt{\sum \|q_i\|^2}$ | Axis and angle of rotation | 3D rotation, rigid body attitude |
 
-### Cross Product and Normal by Dimension
+### 3.2 Vector Relations and Operations
 
-| Dimension | Number System | Symmetries Present | Cross Product | Normal |
-| :--- | :--- | :--- | :--- | :--- |
-| 1D | $\mathbb{Z}, \mathbb{Q}, \mathbb{R}$ | Additive (0), Multiplicative (1) | Always zero | Lift to 2D |
-| 2D | $\mathbb{C}$ | Above + Planar Rotational $U(1)$ | Scalar | Within space |
-| 3D | $\mathbb{H}$ (pure imag.) | Above + 3D Rotational $SU(2)$ | Vector | Given by cross product |
-
-These operations constitute the basic language for analysing information flow in fields. In subsequent sections on fields, gradient, divergence, and curl will operate on vector fields, providing computational tools for local field behaviour.
+| Concept | Mathematical Meaning | Directional Association | Characteristics |
+| :--- | :--- | :--- | :--- |
+| **Addition** | Component-wise sum | Composition of displacement | Commutative, associative |
+| **Subtraction** | Component-wise difference | Decomposition of displacement | Addition of inverse |
+| **Scalar Multiplication** | Multiply all components by scalar | Scaling direction (controlled by 1-symmetry) | Alters magnitude; preserves/reverses direction |
+| **Dot Product (Inner)** | $\vec{a}\cdot\vec{b} = \sum a_i b_i$ | Magnitude of directional projection | Commutative; scalar result; zero if orthogonal |
+| **Projection** | $\operatorname{proj}_{\vec{b}}\vec{a} = \frac{\vec{a}\cdot\vec{b}}{\vec{b}\cdot\vec{b}}\vec{b}$ | Directional decomposition | Collinear with $\vec{b}$ |
+| **Cross Product** | $0$ / Scalar $ad-bc$ / Vector | Measure of rotational direction | Anticommutative |
+| **Complex/Quaternion Product** | Rotation and scaling | Composition of phase/spatial rotation | Non-commutative (quaternions) |
+| **Real/Imaginary Parts** | Extract linear/rotational components | Separates displacement from rotation | Projection operation |
+| **Normalisation** | Divide vector by its norm | Extract unit direction | Magnitude becomes 1 |
+| **Parallel/Perpendicular** | Proportionality / Zero dot product | Directional agreement / Orthogonality | Angle $0^\circ$ or $90^\circ$ |
+| **Angle/Distance** | Arg. diff. or Euclidean angle / Norm of difference | Directional disparity / Displacement magnitude | Satisfies triangle inequality |
+| **Propagation** | Evolution of vector field over time | Temporal evolution of direction | Governed by grad, div, curl |
+| **Reflection/Refraction** | Mirror across normal / Directional deflection | Reversal/deflection of displacement | Incident angle = reflected angle / Snell's Law |
 
 ---
 
-## Functions
+## Part IV: The Periodic System
 
-### Definition
+A core innovation of Periodic Mathematics is elevating "periodicity" from a property of functions to a group action structure on a state set. The following definitions employ standard terminology from group and representation theory.
 
-Let $X,Y$ be constructed number systems or their Cartesian products. A function $f:X\to Y$ is a rule assigning a unique $y\in Y$ to each $x\in X$, denoted $f(x)=y$. Functions encapsulate dependencies between variables within the information field.
+### 4.1 Group-Theoretic Determination of Periodic Relations
 
-### Elementary Functions
+**Definition 3 ($G$-Periodicity)**
+Let $S$ be a set and $G$ a transformation group acting on $S$. If there exists a subset $F\subset S$ (fundamental domain) such that every element of $S$ is obtained by applying some $g \in G$ to some $f \in F$, and distinct orbits are disjoint:
+$$S = \bigsqcup_{f\in F} G\cdot f,$$
+then $S$ is said to possess $G$-periodicity relative to $F$. Elements of $F$ are **symmetric points**, and $G$ is the **period group**. Periodic structure is the invariant of the group action; a periodic function is merely a representation thereof.
 
-Over the reals, elementary functions comprise six classes, generating all elementary functions via finite arithmetic operations and composition.
+**Definition 4 (Periodic Function—Representation-Theoretic Form)**
+Let $S$ admit $G$-periodicity, $V$ a vector space, and $\rho: G\to\text{GL}(V)$ a representation. If $\psi: S\to V$ satisfies
+$$\psi(g\cdot s) = \rho(g)\psi(s),$$
+then $\psi$ is a periodic function with respect to $G$. $\rho=\text{id}$ corresponds to ordinary periodic functions; $\rho\neq\text{id}$ corresponds to covariant periodic functions (e.g., Bloch waves).
 
-| Category | Expression | Domain | Range | Key Property |
-| :--- | :--- | :--- | :--- | :--- |
-| Constant | $f(x) = c$ | $\mathbb{R}$ | $\{c\}$ | Invariant |
-| Power | $f(x) = x^a$ ($a\in\mathbb{R}$) | Depends on $a$ | Depends on $a$ | Repeated mult./div. for integer $a$ |
-| Exponential | $f(x) = a^x$ ($a>0, a\neq 1$) | $\mathbb{R}$ | $\mathbb{R}^+$ | Rate of change proportional to self |
-| Logarithm | $f(x) = \log_a x$ ($a>0, a\neq 1$) | $\mathbb{R}^+$ | $\mathbb{R}$ | Inverse of exponential |
-| Trigonometric | $\sin x,\; \cos x,\; \tan x,\; \cot x,\; \sec x,\; \csc x$ | Depends | Periodic/Bounded/Discontinuous | Coordinates on unit circle |
-| Inverse Trig. | $\arcsin x,\; \arccos x,\; \arctan x$, etc. | $[-1,1]$ or $\mathbb{R}$ | Bounded intervals | Inverses of trig. functions |
+**Definition 5 (Remainder as Periodic Function)**
+Let $m \in \mathbb{N}^+$. The quotient set $\mathbb{Z}/m\mathbb{Z}$ forms the cyclic group $\mathbb{Z}_m$ of order $m$. The map
+$$r_m: \mathbb{Z} \to \mathbb{Z}_m, \quad r_m(n) = n \bmod m$$
+satisfies $r_m(n+m) = r_m(n)$ and is a discrete periodic function under the integer translation group action. The remainder folds the infinite integer sequence onto an orbit of a finite cyclic group.
 
-These six classes form the vocabulary for expressing growth, decay, oscillation, and other fundamental evolutionary laws. Exponential and trigonometric functions unify in the complex domain via Euler's formula $e^{i\theta}=\cos\theta + i\sin\theta$, central to cyclial complex analysis.
+### 4.2 Parameters of Periodic Measure
 
-### Complex Functions
-
-When domain and codomain extend to $\mathbb{C}$, we enter complex analysis. The core of Cyclical Mathematics is the complex exponential form:
-
-$f(\tau) = A(\tau) \cdot e^{i(\omega\tau + \phi)}$
-
-Here $\tau$ is a real variable (time or parameter), $A(\tau) \in \mathbb{C}$ is a time-varying complex amplitude, $\omega\in\mathbb{R}$ the angular frequency, and $\phi\in\mathbb{R}$ the initial phase. $|A(\tau)|$ represents instantaneous energy intensity; $\arg A(\tau)$ contributes additional phase modulation. For constant $A$, this describes uniform circular motion; for varying $A$, it describes complex periodic motion with evolving energy and phase.
-
-Any sufficiently smooth periodic function can be expanded into a series of such functions (Fourier series), where $A(\tau)$ corresponds to the time-varying spectral envelope of that frequency component.
-
-**Key Parameters of the Complex Exponential** (forming the basic vocabulary for discrete cycle sequences):
-
-| Parameter | Symbol | Mathematical Definition | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- | :--- |
-| Period Length | $p$ | Smallest $p>0$ s.t. $f(\tau+p)=f(\tau)$ | Span for one complete oscillation | Determines total elements in sequence |
-| Sampling Rate | $r$ | Sampling step per period | Angular resolution, precision | $r=2\pi/p$ (Nyquist) |
-| Samples per Cycle | $n$ | $n = p/r$ | Number of discrete states | Length of cycle sequence |
-| Frequency | $f$ | $f = 1/p$ | Cycles per unit parameter | Dimensionless or temporal |
-| Complex Amplitude | $A(\tau)$ | $A(\tau) \in \mathbb{C}$ | Dynamic energy & phase evolution | Modulus = energy, arg = phase shift |
-| Angular Frequency | $\omega$ | $\omega = 2\pi f = 2\pi/p$ | Rate of phase change | Radians per unit |
-| Phase | $\phi$ | Initial offset, $f(0)=A(0)e^{i\phi}$ | Initial condition | Starting position in cycle |
-
-### Decibels and Energy Measurement
-
-In Cyclical Mathematics, energy is proportional to the square of amplitude: $E(\tau) \propto |A(\tau)|^2$. To compare energy levels, decibels (dB) provide a logarithmic scale:
-
-$\text{dB}(\tau) = 20 \log_{10}\left(\frac{|A(\tau)|}{A_0}\right),$
-
-where $A_0$ is a reference amplitude. Positive dB indicates energy above reference, negative below. Decibels offer a compact representation of energy distribution in spectral analysis.
-
-### Higher-Dimensional Functions
-
-Extending domains to $\mathbb{R}^n$ or $\mathbb{C}^n$ yields multivariate functions. For vector-valued functions $\mathbf{F}:\mathbb{R}^n\to\mathbb{R}^n$, divergence and curl are defined (see Fields). Quaternion functions $f:\mathbb{H}\to\mathbb{H}$ encode 3D rotational fields and curl evolution.
-
-### Limits
-
-**Definition** Let $f$ be defined in a deleted neighbourhood of $a$. If there exists $L$ such that for every $\varepsilon>0$, there exists $\delta>0$ where $0<|x-a|<\delta$ implies $|f(x)-L|<\varepsilon$, then $L$ is the limit of $f(x)$ as $x$ approaches $a$, written:
-
-$\lim_{x\to a} f(x) = L.$
-
-One-sided, infinite, and limits at infinity are defined analogously.
-
-**Properties:**
--   Uniqueness (if it exists).
--   Preservation under arithmetic (provided denominators are non-zero).
--   Squeeze Theorem: If $g(x)\leq f(x)\leq h(x)$ and $\lim g = \lim h = L$, then $\lim f = L$.
-
-Limits underpin continuity, derivatives, integrals, and series. They formalise "infinite approximation," precisely describing instantaneous change, local tendencies, and cumulative processes in fields.
-
-### Derivatives
-
-For a real function $f:\mathbb{R}\to\mathbb{R}$, the derivative is:
-
-$f'(x) := \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$
-
-if the limit exists. It measures the instantaneous rate of change. For complex functions, differentiation is defined via real/imaginary parts or Cauchy-Riemann conditions.
-
-Higher-order derivatives $f^{(n)}$ reveal deeper structural behaviour. For $f(\tau)=A(\tau)e^{i(\omega\tau+\phi)}$, differentiation involves both $A(\tau)$ variation and rotation: $f'(\tau) = (A'(\tau) + i\omega A(\tau)) e^{i(\omega\tau+\phi)}$. If the fundamental step is a phase rotation $\Delta\theta$, state progression is described by this derivative operation.
-
-| Concept | Mathematical Meaning | Physical Meaning | Description |
+| Parameter | Symbol | Mathematical Definition | Physical Meaning |
 | :--- | :--- | :--- | :--- |
-| First Derivative | $f'(\tau)$, instantaneous rate | Velocity field, local propagation | Direction to next state |
-| Second Derivative | $f''(\tau)$, rate of change of rate | Acceleration field, trend change | Accelerating vs. decelerating |
-| Third Derivative | $f'''(\tau)$, rate of acceleration | Jerk | Long-term curvature change |
-| Nth Derivative | $f^{(n)}(\tau)$, higher-order diff. | Higher dynamics, long-range corr. | Tracking distant phase offsets |
+| **Period Length** | $p$ | Least $p>0$ s.t. $f(\tau+p)=f(\tau)$, or generator step | Span of parameter for one complete cycle |
+| **Frequency** | $f$ | $f = 1/p$ | Cycles per unit parameter |
+| **Angular Frequency** | $\omega$ | $\omega = 2\pi f = 2\pi/p$ | Angular velocity of phase change |
+| **Sample Count** | $n$ | Number of discrete observations per period | Degree of discretisation |
+| **Sampling Interval** | $\Delta t$ | $\Delta t = p/n$ | Parameter span between samples |
+| **Sampling Rate** | $f_s$ | $f_s = 1/\Delta t = n/p$ | Samples per unit parameter |
+| **Phase** | $\phi$ | Offset relative to fundamental domain, $\phi \in [0, 2\pi)$ or $[0, p)$ | Initial position of oscillation |
+| **Amplitude** | $A$ | $A = \sup_{\text{one period}} \|\psi - \bar{\psi}\|$ | Energy intensity |
 
-### Integrals
+### 4.3 Classification of Periods and Orbits
 
-The definite integral $\int_a^b f(x)\,dx$ is the limit of Riemann sums, representing cumulative effect over $[a,b]$. Integration is the inverse of differentiation (Fundamental Theorem of Calculus). In fields, integrals compute total information flow or phase accumulation along paths. Complex and path integrals capture circulation—the global manifestation of curl.
+**Definition 6 (Static Period)**
+If the period group $G$ is a cyclic group $G = \langle g \rangle$ (or direct product of cyclic groups), and the generator action is an isometric translation—i.e., $\exists p > 0$ s.t. $\forall s \in S, d(s, g\cdot s) = p$—then $S$ possesses a static (fixed) period, with $p$ as the minimal period. The remainder function $n \mapsto n \bmod m$ is the discrete prototype.
 
-### Series Expansions and Integral Transforms
+**Definition 7 (Dynamic Period)**
+If the generator action distance is not constant, i.e., $\exists$ a local period function $p: S \to \mathbb{R}_{>0}$ s.t. $d(s, g\cdot s) = p(s)$ and $p(s)$ is not constant, then $S$ possesses a dynamic period. Applicable to locally periodisable systems. Lie group formulation: $\exists X \in \mathfrak{g}$ and smooth scale function $\lambda: S \to \mathbb{R}^+$ s.t. the infinitesimal action is $s \mapsto \exp(\lambda(s)X) \cdot s$.
 
-Analysing periodic phenomena relies heavily on decomposing functions into simple components. These tools form the spectral analysis library of Cyclical Mathematics.
+**Definition 8 (Series Period)**
+If the local period function $p(s)$ admits a Fourier series expansion $p(s) = p_0 + \sum (a_n\cos\frac{2\pi ns}{P} + b_n\sin\frac{2\pi ns}{P})$, the system possesses a series period. Vanishes to static period if all $a_n = b_n = 0$.
 
-#### Taylor Expansion
+**Definition 9 (Infinite Orbit)**
+If the transformation group $G$ is non-compact (e.g., $\mathbb{Z}$ or $\mathbb{R}$), and the orbit extends infinitely in one direction without returning to the start, the system possesses an infinite orbit. Examples include natural number sequences and hyperbolic trajectories. *Note*: Traditionally, "period" implies closed orbits. Periodic Mathematics unifies closed periods and infinite orbits under a generalised periodic structure.
 
-**Definition** If $f$ is infinitely differentiable at $a$:
-$f(x) = \sum_{n=0}^{\infty} \frac{f^{(n)}(a)}{n!} (x-a)^n.$
-At $a=0$, it is the Maclaurin series. Taylor expansions approximate smooth functions using polynomials, with coefficients from derivatives.
+**Definition 10 (Attracting Orbit)**
+If an orbit approaches a limit point $s_*$ with self-similarity—i.e., $\exists 0 < \lambda < 1$ s.t. $d(g^{k+1}\cdot s, s_*)/d(g^k \cdot s, s_*) \to \lambda$—the system possesses an attracting orbit. The geometric sequence $\{r^n\}$ ($0 < r < 1$) is the elementary instance.
 
-**Physical Meaning:** Decomposes local change into constant, linear (gradient), quadratic (curvature), etc., forming the basis for linearisation, stability analysis, and nonlinear corrections.
+### 4.4 Period Combination and Resonance
 
-#### Fourier Series
+**Definition 11 (Period Combination)**
+If a system comprises two independent periodic processes (groups $G_1, G_2$, orders $n_1, n_2$), the coupled period group is a quotient of $G_1 \times G_2$, with order dividing $\operatorname{lcm}(n_1, n_2)$.
 
-**Definition** For a sufficiently smooth periodic function $f(t)$ with period $T$:
-$f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos\frac{2\pi n t}{T} + b_n \sin\frac{2\pi n t}{T} \right) = \sum_{n=-\infty}^{\infty} c_n e^{i\frac{2\pi n}{T}t}.$
-Coefficients $c_n$ are the spectrum, encoding amplitude and phase of frequency components.
-
-**Physical Meaning:** Any periodic motion is a superposition of simple harmonics. Spectral analysis transforms complex waveforms into clear frequency-domain energy distributions, identifying dominant periods and harmonic structures.
-
-#### Basis Transformations (Radix-n FFT)
-
-Fast Fourier Transforms (FFT) use different bases for different sequence lengths.
-
-| Concept | Mathematical Meaning | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- |
-| Radix-2 FFT | Length $N=2^k$, dyadic decomposition | Efficient binary spectrum calc. | Most common, power-of-two required |
-| Radix-3 FFT | Length $N=3^k$, triadic recursion | Analysis of ternary structures | Suited for three-body coupling |
-| Radix-5 FFT | Length $N=5^k$, pentadic decomp. | Analysis of five-fold symmetry | Suited for quintic cycles |
-| Radix-7 FFT | Length $N=7^k$, heptadic decomp. | Analysis of seven-fold periodicity | Suited for weekly cycles, heptatonic scales |
-
-#### Integral Transform Toolbox
-
-Transforms mapping time-domain to frequency-domain (or complex frequency-domain).
-
-| Transform | Mathematical Meaning | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- |
-| DFT | Discrete spectrum of finite sequence | Harmonic decomposition of digital sig. | Foundation, FFT is fast algorithm |
-| IDFT | Reconstruct sequence from spectrum | Signal synthesis | Inverse of DFT |
-| DTFT | Continuous spectrum of infinite sequence | Frequency response of digital filters | Spectrum is periodic & continuous |
-| CTFT | Continuous spectrum of continuous signal | Ideal spectrum of analogue signals | Theoretical model |
-| FFT | Efficient DFT via base-n decomposition | Real-time spectral analysis | Complexity $O(N\log N)$ |
-| STFT | Segmented DFT with sliding window | Time-frequency analysis of non-stationarity | Reveals freq. variation over time |
-| Wavelet | Inner product with scalable, translatable basis | Multi-resolution time-frequency localisation | Superior to STFT for transients |
-| CZT | Z-transform along spiral contour | Arbitrary path spectrum, chirp analysis | Flexible freq. band/resolution |
-| Bluestein | Compute DFT of arbitrary length via convolution | Optimisation for non-power-of-two | Converts DFT to convolution |
-| Laplace | Complex exponential weighted integral | Analysis of growth/decay & transients | Converts ODEs to algebraic eqns |
-
-### Diffusion Kernels
-
-Diffusion kernels (convolution kernels) smooth, filter, or simulate information propagation. They correspond to different diffusion modes in field theory.
-
-| Kernel Function | Mathematical Form | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- |
-| Gaussian | $e^{-x^2/2\sigma^2}$ | Normal diffusion, heat conduction | Smooth, no ringing |
-| Exponential | $e^{-\lambda \|x\|}$ | Radioactive decay, unilateral diffusion | Rapid decay, Laplace distribution |
-| Inverse Distance | $1/\|x\|$ | Gravity, electrostatic potential | Long-range, weak, singular at origin |
-| Cauchy | $1/(1+x^2)$ | Lorentzian lineshape, heavy tails | Robust to outliers, long-range |
-| Triangular | Piecewise linear: $1-\|x\|$ (for $\|x\|<1$) | Linear interpolation, local averaging | Simple, compact support |
-| Sinc | $\sin(x)/x$ | Ideal low-pass filtering | Rectangular freq. window, perfect HF removal |
-| Bessel | $J_0(x)$ | Cylindrical waves, radial symmetry | Natural solution for circular symmetry |
-| Laplacian | $e^{-\sqrt{x^2}}$ | Sharp edges, edge detection | First-order edge detection |
-
-### Spectral Dynamics
-
-With spectral representations, field behaviour can be controlled and predicted via spectral manipulation. Spectral dynamics studies the interaction, propagation, and evolution of frequency components within the information field.
-
-**Spectral Operations:**
-
-| Concept | Mathematical Meaning | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- |
-| Spectral Convolution | Product of two signals in freq. domain | Filter response, combined effect | Time conv. = freq. mult. |
-| Spectral Projection | Inner product with a basis function | Energy allocation to direction/freq. | Extract specific component |
-| Point Perturbation | Modulate magnitude/phase of single freq. | Resonant excitation, local impulse | Single-frequency driving |
-| Band Perturbation | Modulate a frequency band | Bandwidth excitation, global impulse | Affects contiguous frequencies |
-| Point Diffusion | Smooth a spectral point via kernel | Information dispersion, thermal diff. | Energy spreads to neighbours |
-| Band Diffusion | Wave equation evolution on spectrum | Wave propagation, periodic diffusion | Wave transport in freq. space |
-
-**Spectral Applications:**
-
-| Concept | Mathematical Meaning | Physical Meaning | Description |
-| :--- | :--- | :--- | :--- |
-| Spectral Analysis | Fourier decomposition of field | Signal decomposition, identify periods | Find dominant frequencies |
-| Spectral Interference | Coherent superposition of components | Enhancement/cancellation, fringes | Constructive/destructive interference |
-| Spectral Computation | Predict response via freq.-domain ops | System output for input spectrum | Quantitative evolution assessment |
-| Spectral Interference (Noise) | Introduce noise/unrelated frequencies | Signal corruption, negative effect | Degrades original structure |
-| Spectral Filtering | Retain/amplify bands, attenuate others | Signal purification, select favourable | Band-pass, notch, etc. |
-| Spectral Coupling | Locking/synchronisation between freqs. | Resonance enhancement, combination | Frequency locking, energy transfer |
-| Spectral Suppression | Targeted attenuation of frequencies | Weaken adverse factors | Notch filtering |
-| Spectral Convolution (Global) | Convolve spectrum with multiple kernels | Feature extraction, comprehensive eval. | Multi-dimensional analysis |
+If $n_1/n_2 = m/k$ (irreducible fraction), the ratio $m:k$ is the **resonance ratio**, and $|m-k|$ is the **resonance order**. Lower-order resonances are more stable. Astronomical instance: The $1:2:4$ period ratios of Jupiter's Galilean moons.
 
 ---
 
-## Elements of Cyclical Analysis
+## Part V: General Periodic Functions for Each Number System
 
-Before entering continuous field dynamics, we establish concepts for describing cyclical phenomena. These elements unify continuous evolution, discrete sampling, frequency-domain representation, and physical measurement. They bridge function theory and field theory—each field state captured via sampling and spectral analysis forms a discrete cycle sequence element.
+Periodic Mathematics establishes general periodic functions for each number system, revealing the intrinsic link between number system structure and periodic behaviour.
 
-| Concept | Mathematical Meaning | Physical Meaning | Description |
+### 5.1 Periodic Functions on Naturals
+
+**Definition 12 (Periodic Sequence on Naturals)**
+$f: \mathbb{N} \to V$ is **eventually periodic** if $\exists p$ s.t. $f(n+p)=f(n)$ for all sufficiently large $n$. If true for all $n$, it is **purely periodic**. Periodicity on naturals is "unidirectional", representing infinite orbits in discrete form.
+
+### 5.2 Periodic Functions on Integers
+
+**Definition 13 (Periodic Function on Integers)**
+$f: \mathbb{Z} \to V$ is periodic with period $p$ if $f(n+p)=f(n)$ for all $n\in\mathbb{Z}$. General form: $f(n)=g(n \bmod p)$, where $g:\mathbb{Z}_p \to V$. The remainder function is the elementary example.
+
+### 5.3 Periodic Functions on Rationals
+
+**Definition 14 (Additive Periodic Function on Rationals)**
+$f: \mathbb{Q} \to V$ satisfies $f(x+q)=f(x)$; the period group is $q\mathbb{Z}$.
+
+**Definition 15 (Multiplicative Periodic Function on Rationals)**
+$f: \mathbb{Q}^+ \to V$ satisfies $f(rx)=f(x)$, $r\neq 1$; the period group is the multiplicative group $\langle r \rangle$. The geometric sequence $f(k)=r^k$ is the elementary instance of an orbit under the multiplicative group.
+
+### 5.4 Periodic Functions on Reals
+
+**Definition 16 (Periodic Function on Reals)**
+$f: \mathbb{R} \to V$ satisfies $f(t+T)=f(t)$. General form: $f(t)=\sum c_n e^{i 2\pi n t/T}$, i.e., the decomposition into irreducible representations of $U(1)$.
+
+### 5.5 Periodic Functions on Complex Numbers
+
+**Definition 17 (Elliptic Periodic Functions on Complex Numbers)**
+$f(z+\omega_1)=f(z+\omega_2)=f(z)$, with $\omega_1,\omega_2$ $\mathbb{R}$-linearly independent; corresponds to elliptic functions.
+
+**Definition 18 (Rotational Periodic Functions on Complex Numbers)**
+$f(qz)=f(z)$, $q=e^{i\theta}$, $\theta/2\pi \in \mathbb{Q}$; the period group is a finite cyclic group.
+
+### 5.6 Periodic Functions on Quaternions
+
+**Definition 19 (Rotational Periodic Functions on Quaternions)**
+$f(qxq^{-1})=f(x)$, $q$ a unit quaternion; the period group is $\langle q \rangle \subset SU(2)$. General form given by the Peter-Weyl theorem:
+$$f(x) = \sum_{j=0}^{\infty} \sum_{m,n=-j}^{j} c_{mn}^j \, D_{mn}^j(x),$$
+where $D_{mn}^j$ are the Wigner D-matrix elements of order $j$ for $SU(2)$.
+
+---
+
+## Part VI: Mathematical Apparatus
+
+Periodic Mathematics directly employs standard tools of modern mathematics without reinvention.
+
+### 6.1 Harmonic Analysis
+
+Fourier series, Fourier transform, DFT/FFT (base-2/3/5/7 decompositions), wavelet transform, Laplace transform, Chirp Z-transform, etc., are unified as harmonic analysis on locally compact groups (Pontryagin duality, Peter-Weyl theorem). Periodic Mathematics reformulates this: periodic functions are expanded according to the irreducible representations of the period group.
+
+| Period Group | Integral Transform |
+| :--- | :--- |
+| $U(1)$ | Fourier Series |
+| $\mathbb{R}$ | Fourier Transform |
+| $\mathbb{Z}_N$ | Discrete Fourier Transform (DFT) |
+| $\mathbb{R}\rtimes\mathbb{R}^\times$ | Wavelet Transform |
+| $\mathbb{R}_{\ge 0}$ | Laplace Transform |
+
+### 6.2 Group Theory and Representation Theory
+
+Group actions, orbits, fundamental domains, and equivariant maps constitute the core language for defining periodic structures.
+
+### 6.3 Partial Differential Equations and Differential Geometry
+
+Diffusion equations, wave equations, Ginzburg-Landau equations, etc., are standard tools for describing field evolution. Lie groups and algebras describe dynamic periodicity.
+
+---
+
+## Part VII: Gradient, Divergence, Curl, and the Quaternion Maxwell Equations
+
+### 7.1 Gradient, Divergence, Curl
+
+The gradient $\nabla\phi = (\partial_{x_1}\phi,\dots,\partial_{x_n}\phi)$ points in the direction of maximal increase of a scalar field. The divergence $\nabla\cdot\mathbf{F} = \sum \partial_i F_i$ measures the source/sink strength of a vector field. The curl $\nabla\times\mathbf{F}$ (vector in 3D, scalar in 2D) measures the local rotational intensity of a vector field.
+
+> **Interpretive Note (Not a Theorem)**: Within the interpretive framework of Periodic Mathematics, the gradient associates with 0-symmetry (potential difference driving displacement), divergence with 1-symmetry (source/sink ratio defining scaling), and curl with $i$-symmetry (2D curl corresponds to complex phase rotation; 3D curl corresponds to the imaginary part of quaternion algebra).
+
+### 7.2 Quaternion Gradient Operator and Maxwell's Equations
+
+Introduce the quaternion gradient operator $\nabla = i\partial_x + j\partial_y + k\partial_z$. For a quaternion field $F = \mathbf{E} + i\mathbf{B}$, Maxwell's equations assume the compact quaternion form:
+$$\nabla F = \rho - \mathbf{J},$$
+where $\rho$ is charge density and $\mathbf{J}$ is current density. Expansion yields Gauss's law ($\nabla\cdot\mathbf{E} = \rho$) in the real part, and the Ampère-Maxwell law ($-\nabla\times\mathbf{B} + \frac{\partial\mathbf{E}}{\partial t} = -\mathbf{J}$) in the imaginary part. This formulation unifies gradient, divergence, and curl within the non-commutative structure of quaternion multiplication.
+
+### 7.3 Operators and Symmetry Centres
+
+| Operator | Field-Theoretic Role | Quaternion Expression | Symmetry Interpretation |
 | :--- | :--- | :--- | :--- |
-| Time | Evolution parameter, usually $t\in\mathbb{R}$ | Direction of causal sequence | 1D continuum marking field frames |
-| Period | Smallest $T>0$ s.t. $f(t+T)=f(t)$ | Duration for one complete cycle | Determined by boundary conditions |
-| Frequency | $f=1/T$ | Cycles per unit time | Related to angular freq. $\omega=2\pi f$ |
-| Resolution | Time step $\Delta t$ or freq. interval $\Delta f$ | Precision and discrimination | Denser sampling resolves more freqs. |
-| Trend | Low-freq. envelope or gradient direction | Macroscopic direction of evolution | Long-term trajectory after removing HF |
-| Phasor | Complex amplitude $Ae^{i\phi}$ (ignoring $e^{i\omega t}$) | Steady-state amp. & phase | Converts ODEs to algebraic eqns. |
-| Waveform | Specific shape of $f(t)$ | Instantaneous value trajectory | Sinusoidal, square, sawtooth, etc. |
-| Spectrum | Fourier coefficients $c_n$ or transform $\hat{f}(\omega)$ | Energy & phase distribution per freq. | Reveals harmonic structure |
-| Sample | Field value $f(t_k)$ at discrete time $t_k$ | Snapshot of continuous field | Single measurement or record |
-| Sampler | Sampling function or sequence $\{t_k\}$ | Rule determining when/how to measure | Must satisfy Nyquist criterion |
+| **Gradient** | Potential-driven displacement | $\nabla\phi$ (scalar field) | 0-symmetry (Displacement direction) |
+| **Divergence** | Source/Sink measure | $\operatorname{Re}(\nabla F)$ (scalar part) | 1-symmetry (Scaling direction) |
+| **Curl** | Rotational measure | $\operatorname{Im}(\nabla F)$ (vector part) | $i$-symmetry (Phase rotation) |
 
-These elements unify continuous descriptions (time, waveform, spectrum) with discretisation (sampling, resolution). From the fundamental field perspective, each sample is a snapshot at a specific phase; the totality of samples constitutes a discrete cycle sequence—the core object classified and predicted by Cyclical Mathematics.
+> This association belongs to theoretical interpretation within the Periodic Mathematics framework, not an established mathematical theorem.
 
 ---
 
-## Fields
+## Part VIII: Waves and Spectra—Computation via Categorical Operations
 
-Differential and integral calculus on vector functions provides the language for describing local behaviour in continuous media. In Cyclical Mathematics, these operators centre on a fundamental field whose dynamics uniformly encompass gradient, divergence, and curl.
+Wave propagation and spectral analysis are central applications of Periodic Mathematics. Starting from kernel functions, all spectral operations are decomposed into five independent categories: Group Actions (unary transformations), Interactions (multivariate coupling), Representation Transforms (basis changes), Domain Transforms (change of domain), and Projections & Selections (dimensionality reduction and compression). These five categories exhaust the fundamental operations on frequency, phase, period, and amplitude.
 
-### Definition
+### 8.1 Kernel Functions
 
-Cyclical Mathematics postulates a fundamental field whose dynamics are described by equations incorporating gradient, divergence, and curl. Under these dynamics, the field spontaneously generates stable, isolated local structures. The complete classification of these structures corresponds precisely to the established number systems ($\mathbb{N}$ to $\mathbb{H}$) and their algebraic symmetries.
+Kernel functions describe how local perturbations propagate spatially over time, or how signals are smoothed and reconstructed in transform domains. In periodic space $\mathfrak{P}_T$, kernels expand as multiplicative operators on irreducible representations: $K(x) = \sum_{\chi \in \widehat{G}} \hat{K}(\chi) \chi(x)$.
 
-Mathematically, this fundamental field is projected into two basic forms:
+| Kernel | Mathematical Form | Physical/Informational Meaning | Effect on Period/Spectrum |
+| :--- | :--- | :--- | :--- |
+| **Gaussian** | $e^{-x^2/2\sigma^2}$ | Heat diffusion, Gaussian smoothing | High-frequency attenuation; period smoothing |
+| **Exponential** | $e^{-\lambda\|x\|}$ | Radioactive decay, unilateral diffusion | Exponential amplitude decay along orbit |
+| **Inverse Distance** | $1/\|x\|$ | Gravitational/electrostatic potential | Long-range correlation; long-range order |
+| **Cauchy** | $1/(1+x^2)$ | Lorentzian line shape, heavy tails | Preserves long-range correlation; robust to outliers |
+| **Triangular** | $1-\|x\|$ (compact support) | Linear interpolation, local averaging | Local smoothing; detail preservation |
+| **Sinc** | $\sin(x)/x$ | Ideal low-pass filter | Rectangular window in freq.; total high-freq removal |
+| **Bessel** | $J_0(x)$ | Cylindrical wave, radial diffusion | Suited for circular/cylindrical periodic domains |
+| **Laplacian** | $e^{-\sqrt{x^2}}$ | Edge detection, singularity capture | Period boundary sharpening |
+| **Hyperbolic Secant** | $\operatorname{sech}(x)$ | Soliton-like propagation | Preserves specific waveform |
+| **Mexican Hat** | $(1-x^2)e^{-x^2/2}$ | Edge enhancement (LoG) | Extracts period transition points |
 
--   **Scalar Field** $\phi: \mathcal{M}\to \mathbb{R}$: Assigns an information density or potential value to each point.
--   **Vector Field** $\mathbf{F}: \mathcal{M}\to T\mathcal{M}$: Assigns a magnitude and direction of information flow to each point.
+### 8.2 Categorical Classification of Spectral Operations
 
-The evolution of the field is the central subject of Cyclical Mathematics. Local behaviour is entirely characterised by three operators: gradient, divergence, and curl. They control directional differences in density, source/sink strength of flow, and closed loops of flow, respectively.
+#### Category I: Group Actions
+Unary transformations preserving the representation space; the action of a group on the function space of spectra.
 
-### Gradient
+| Group Action | Group | Mathematical Definition | Physical Meaning |
+| :--- | :--- | :--- | :--- |
+| **Frequency Shift** | $(\mathbb{R},+)$ | $(T_a \hat{\psi})(\omega) = \hat{\psi}(\omega - a)$ | Modulation; spectrum translation |
+| **Frequency Scaling** | $(\mathbb{R}^+,\times)$ | $(S_\lambda \hat{\psi})(\omega) = \hat{\psi}(\omega/\lambda)$ | Time compression/expansion |
+| **Phase Rotation** | $U(1)$ | $(R_\phi \hat{\psi})(\omega) = e^{i\phi} \hat{\psi}(\omega)$ | Global phase shift; time delay |
+| **Amplitude Gain** | $C(\Omega,\mathbb{R}^+)$ | $(A_g \hat{\psi})(\omega) = g(\omega)\hat{\psi}(\omega)$ | Filtering; selective amplification/attenuation |
+| **Freq. Axis Reflection** | $C_2$ | $(M \hat{\psi})(\omega) = \hat{\psi}(-\omega)$ | Spectrum reversal; time-domain conjugation |
 
-**Definition** For a scalar field $\phi$, its gradient $\nabla\phi$ is a vector field pointing in the direction of steepest increase, with magnitude equal to the directional derivative in that direction:
+#### Category II: Interactions
+Binary or multivariate operations between two (or more) periodic structures, generating new frequency components. This is a distinctive direction of Periodic Mathematics versus traditional harmonic analysis.
 
-$\nabla\phi = \left( \frac{\partial\phi}{\partial x_1}, \frac{\partial\phi}{\partial x_2}, \dots, \frac{\partial\phi}{\partial x_n} \right)$
+| Interaction | Mathematical Definition | Physical Meaning | New Period Generated |
+| :--- | :--- | :--- | :--- |
+| **Linear Superposition** | $(\hat{\psi}_1 + \hat{\psi}_2)(\omega)$ | Interference | No new frequencies; amplitude/phase change only |
+| **Frequency Convolution** | $(\hat{\psi}_1 * \hat{\psi}_2)(\omega)$ | Mixing; time-domain product | Sum freq. $\omega_1+\omega_2$, diff. freq. $\|\omega_1-\omega_2\|$ |
+| **Pointwise Product** | $(\hat{\psi}_1 \cdot \hat{\psi}_2)(\omega)$ | Frequency-domain windowing; time conv. | Frequency gating |
+| **Inner Product/Correlation** | $\langle \hat{\psi}_1, \hat{\psi}_2 \rangle$ | Matched filtering; coherence measure | Scalar match metric |
 
-**Significance** The gradient reveals spatial asymmetry in information density. The field tends to flow from low to high density (or vice versa). The gradient direction defines local "increase," constituting the field-theoretic root of additive symmetry (positive/negative direction). When the field forms periodic potential wells under the gradient, discrete stable states emerge—the dynamic origin of integer "sequence direction."
+#### Category III: Representation Transforms
+Changing the signal's basis, mapping from one Hilbert space to another.
 
-### Divergence
+| Representation Transform | Original Space | Target Space | Core Property |
+| :--- | :--- | :--- | :--- |
+| **Fourier Transform** | $L^2(\mathbb{R}, dt)$ | $L^2(\mathbb{R}, d\omega)$ | Diagonalises translation group |
+| **Short-Time FT** | $L^2(\mathbb{R})$ | $L^2(\mathbb{R}^2)$ | Local frequency analysis |
+| **Wavelet Transform** | $L^2(\mathbb{R})$ | $L^2(\mathbb{R} \times \mathbb{R}^+)$ | Diagonalises affine group |
+| **Laplace Transform** | Time-domain function | Complex frequency domain | Growth/decay mode decomposition |
+| **Z-Transform** | Discrete sequence | Unit circle in complex plane | Frequency response of discrete systems |
+| **Spherical Harmonics** | $L^2(S^2)$ | Sequence of harmonic coefficients | Diagonalises $SO(3)$ rotation group |
 
-**Definition** For a vector field $\mathbf{F}=(F_1,\dots,F_n)$, its divergence is a scalar field:
+#### Category IV: Domain Transforms
+Altering the underlying variable set itself—from continuous to discrete, uniform to non-uniform.
 
-$\nabla\cdot\mathbf{F} = \frac{\partial F_1}{\partial x_1} + \frac{\partial F_2}{\partial x_2} + \cdots + \frac{\partial F_n}{\partial x_n}$
+| Domain Transform | Mathematical Definition | Physical Meaning |
+| :--- | :--- | :--- |
+| **Sampling** | $\psi[n] = \psi(n\Delta t)$ | Continuous→Discrete; restriction to $\Delta t \mathbb{Z}$ |
+| **Interpolation/Recon.** | $\psi(t) = \sum_n \psi[n] \operatorname{sinc}(t-n\Delta t)$ | Discrete→Continuous |
+| **Resampling** | Alter $\Delta t$ (decimation/interpolation) | Change step size of discrete subgroup |
+| **Periodic Continuation** | $\psi_{\text{per}}(t) = \sum_k \psi(t - kT)$ | From aperiodic to periodic |
 
-**Significance** Divergence measures the "source" or "sink" strength of information flow at a point. Positive divergence indicates generation (outflow); negative divergence indicates annihilation (inflow). Comparing divergences yields scaling relationships—the ratio of strengths defines magnification or reduction, the field-theoretic root of rational multiplicative symmetry (1-symmetry). Periodic source-sink structures yield quantifiable proportions.
+> **Pontryagin Duality Perspective**: Sampling is the restriction from the continuous group $\mathbb{R}$ to its discrete subgroup $\Delta t\mathbb{Z}$. The Fourier transform maps this restriction to a periodic continuation on the dual group $U(1)$. This is the group-theoretic essence of the sampling theorem.
 
-### Curl
+#### Category V: Projections and Selections
+Selecting a subset from the full spectrum, or projecting a high-dimensional representation onto a lower-dimensional subspace.
 
-**Definition** For a 3D vector field $\mathbf{F}$, curl is a vector field:
+| Projection/Selection | Mathematical Definition | Physical Meaning |
+| :--- | :--- | :--- |
+| **Band-pass Filter** | $\hat{\psi}' = \hat{\psi} \cdot \mathbf{1}_{[\omega_1,\omega_2]}$ | Select specific frequency band |
+| **Downsampling (Decim.)** | Retain every $M$-th sample; discard others | Reduce data rate |
+| **Principal Component Anal.** | Project onto direction of max. variance | Dimensionality reduction; extract dominant modes |
+| **Threshold Compression** | Retain $\|\hat{\psi}\|>\tau$ components; zero others | Sparse representation |
 
-$\nabla\times\mathbf{F} = \left( \frac{\partial F_3}{\partial x_2} - \frac{\partial F_2}{\partial x_3},\; \frac{\partial F_1}{\partial x_3} - \frac{\partial F_3}{\partial x_1},\; \frac{\partial F_2}{\partial x_1} - \frac{\partial F_1}{\partial x_2} \right)$
+### 8.3 Constructing Complex Operations from Basic Ones
 
-In 2D, curl reduces to the scalar $\frac{\partial F_2}{\partial x_1} - \frac{\partial F_1}{\partial x_2}$.
+| Complex Operation | Construction Method | Categories Involved |
+| :--- | :--- | :--- |
+| **Translation** | Frequency-dependent phase rotation | Group Action (Phase Rotation) |
+| **Scaling** | Inverse of frequency scaling | Group Action (Frequency Scaling) |
+| **Filtering** | Amplitude gain $g(\omega)$ | Group Action (Amplitude Gain) |
+| **Convolution** | Frequency-domain product | Group Action (Amplitude Gain + Phase Rotation) |
+| **Diffusion** | Multiplication by Gaussian transfer fn. | Group Action (Amplitude Gain) |
+| **Perturbation** | Additive source | Interaction (Superposition) |
+| **Sampling** | Time sampling ↔ Freq. periodisation | Domain Transform (Sampling) + Group Action |
+| **Resampling** | Interpolation + Decimation | Domain Transform + Group Action (Amplitude Gain) |
+| **Transformation** | Basis change | Representation Transform |
+| **Fund./Beat Freq.** | Generation of difference frequency | Interaction (Freq. Convolution) |
+| **Resonance** | Gain peak + Sum frequency | Group Action (Amplitude Gain) + Interaction |
+| **Coupling** | Product term ↔ Freq. convolution | Interaction (Freq. Convolution) |
+| **Suppression** | Notch filtering | Group Action (Amplitude Gain) |
+| **Locking/Unlocking** | Phase feedback + Nonlinear attractor | Group Action (Phase Rotation) + Interaction |
+| **Energy/dB** | $\int \|\hat{\psi}\|^2 d\omega$ | Metric of Group Action (Amplitude Gain) |
+| **Entropy** | $-\sum p_i \log p_i$ | Projection (Probability) + Metric |
+| **Compression** | Transform + Threshold + Coding | Repr. Transform + Projection (Threshold) |
+| **Freq. Clustering** | Distance metric on spectrum + Grouping | Group Action (Freq. Shift) + Metric |
+| **Freq. Division Multiplex.** | Modulate multi-ch. signals to diff. bands | Group Action (Frequency Shift) |
 
-**Significance** Curl measures the local rotational intensity of flow. Where curl is non-zero, flow does not proceed linearly but forms closed vortices around a local axis. Curl is the field-theoretic root of rotational symmetry (unit circle and 3D rotation): 2D curl induces planar rotation (complex phase); 3D curl components correspond to the imaginary parts of quaternions (non-commutative algebra). Stable curl structures yield closed cycles—circular motion, vortices, cyclic sequences.
-
-### Synergy of Operators and Emergence of Cycles
-
-Gradient, divergence, and curl do not act independently. Field evolution typically includes all three. A simplified model:
-
-$\frac{\partial\mathbf{F}}{\partial t} = \alpha\nabla\phi + \beta\nabla\cdot\mathbf{F} + \gamma\nabla\times\mathbf{F}$
-
-with coupling constants $\alpha,\beta,\gamma$. Such dynamics naturally generate discrete stable structures: periodic potential wells (natural number nodes), directed flow (integer displacement), convergence/divergence ratios (rational scaling), continuous intensity (real potential), closed vortices (complex phase), and 3D rotational vortex tubes (quaternion direction).
-
-Sampling and combining these structures yields discrete cycle sequences with fixed phase differences. Each element is a snapshot at a specific phase; adjacent elements are linked by fixed operator actions—gradient advance, divergence scaling, or curl phase rotation. The entire sequence forms a complete cycle, its length and structure determined by eigenfrequencies and boundary conditions.
-
-Thus, the dynamics of the fundamental field generate all number systems and symmetries, organising them into observable cycle sequences. Cyclical Mathematics employs all preceding tools—from naturals to quaternions, vectors to complex functions, limits to gradients—to classify and predict these sequences. Without metaphor or cultural symbolism, purely through field operator dynamics, it recapitulates the logic of "the Tao gave birth to One...": from structureless substrate to discrete counting, to directed sequences, to proportion, continuity, rotation, culminating in the complex symphony of all things.
+**Core Perspective of Periodic Mathematics**: All operations above reduce to combinations of frequency, phase, period, and amplitude manipulations across the five basic categories. The **Interaction** category distinguishes Periodic Mathematics from traditional harmonic analysis—it focuses on how different periods generate new periods, resonance, locking, and annihilation through coupling.
 
 ---
 
-## Waves and Fields: Dynamics and Geometry
+## Part IX: Perturbations, Coupling, and Interference
 
-Having constructed number systems, vectors, functions, and fields, we now discuss the dynamic relationship between waves and fields, and their unified geometric representation.
+Perturbations are the fundamental drivers of dynamic evolution in periodic systems.
 
-### Geometric Essence of Waveforms and Spectra
+### 9.1 Point Perturbations
 
-A waveform is a continuous complex function $f(\tau)$ or the integral reconstruction of discrete samples. Its values can be any directed number—real, complex, or quaternion—supporting rotation (phase advance) and scaling (amplitude change). The waveform is the direct temporal presentation of information.
+**Definition 20 (Point Perturbation)**
+A perturbation injected at location $x_0$: $\psi'(x) = \psi(x) + \varepsilon \cdot \delta(x - x_0)$, where $\varepsilon \in \mathbb{C}$ is the intensity.
 
-A spectrum is the discrete set of points in the frequency domain resulting from the Fourier transform of the waveform. Resolution in the frequency domain is determined by the sampling rate. Each spectral point is a directed number, carrying amplitude (modulus) and phase (argument) for that frequency component. The spectrum is the hidden cyclical structure behind the waveform.
+### 9.2 Interference
 
-### Generation of Fields: The Magnetisation Process
+Superposition of two perturbations yields an interference term: $|\psi_1+\psi_2|^2 = |\psi_1|^2+|\psi_2|^2+2|\psi_1||\psi_2|\cos(\Delta\phi)$. In-phase enhances; anti-phase cancels.
 
-Field generation is a "magnetisation" process—in a disordered state, information flow directions are random and cancel out macroscopically. When external conditions or internal coupling induce local ordering, divergence (sources/sinks), gradient (potential differences), and curl (vortices) emerge, giving birth to the field. The field maintains static spatiotemporal relations—where potential wells lie, where sources are, and around which axes vortices rotate.
+### 9.3 Effects of Perturbations on Periodic Structure
 
-### Hierarchy: Fields, Waves, Spectra
+| Effect Dimension | Mathematical Characterisation | Physical Manifestation |
+| :--- | :--- | :--- |
+| **Period Change** | Period group changes to subgroup or quotient | Rhythm reset |
+| **Amplitude Change** | Smoothing or sharpening via diffusion kernel | Energy decay or amplification |
+| **Frequency Change** | Excitation of new frequency components | Spectral broadening |
 
-The field is the most fundamental structure, defining operator states (gradient, divergence, curl distribution) at every point. When fields interfere or couple, static equilibrium breaks, and perturbations propagate as waves. During propagation, waves interact continuously with local gradient, divergence, and curl—gradient accelerates/decelerates, divergence converges/diverges energy, curl imparts polarisation.
+---
 
-The wave's temporal form (waveform) yields a spectrum via sampling and Fourier transformation. The spectrum reveals all cyclical components within the wave—dominant frequencies, suppressed ones, and phase relationships.
+## Conclusion
 
-The relationship is summarised as:
-
-```
-Field → interference/coupling → Wave → sampling+transform → Spectrum
-```
-
-The reverse holds: spectra synthesise waves; wave energy distributions can alter field sources and vortices.
-
-### Layered Operations
-
-Different operations apply to different layers:
-
-**Point Operations (Local):**
--   **Point Interference:** Impulse excitation at a single point in field/wave/spectrum.
--   **Point Diffusion:** Smooth energy to neighbours via kernel (time or frequency smoothing).
-
-**Wave Operations (Time Domain):**
--   **Wave Interference:** Coherent superposition of waves, producing fringes.
--   **Wave Coupling:** Energy exchange between frequencies/directions (frequency locking, mode conversion).
-
-**Field Operations (Spatial):**
--   **Field Interference:** Overlap of gradient/divergence/curl distributions altering sources/vortices.
--   **Field Coupling:** Nonlinear terms causing energy transfer between field components.
-
-**Spectral Operations (Frequency Domain):**
--   **Spectral Interference:** Coherent superposition of frequency components.
--   **Spectral Coupling:** Phase locking between frequencies, forming harmonics or combs.
-
-### Unified Geometric Picture
-
-All operations acquire geometric representation in phase space. The waveform is a trajectory (parametric curve); the field is a vector field (arrows at points); the spectrum is a set of points on the complex plane (one per frequency).
-
--   **Rotation** corresponds to phase advance—rotation about origin or unit sphere in complex/quaternion space.
--   **Scaling** corresponds to amplitude change—radial scaling, logarithmic energy change.
--   **Diffusion** corresponds to smoothing of point sets—energy "leaking" to neighbours.
--   **Interference** corresponds to vector addition/subtraction—synthesis or cancellation.
--   **Coupling** corresponds to nonlinear transformation—multiplication creating sum/difference frequencies (new spectral points).
-
-### Wave Nature of Objects and Energy
-
-In Cyclical Mathematics, objects and energy propagate as waves. A "particle" is merely a wave packet—a spatially localised waveform carrying curl (spin), gradient (momentum), and divergence (mass/energy source). Wave packets constantly interact with spatial gradient (potential), divergence (source/sink), and curl (vortex) fields during propagation. This unifies classical and quantum forces: gravity corresponds to divergence (mass convergence); electromagnetism to curl (charge rotation); strong/weak interactions to gradient (nuclear potential wells).
-
-This perspective weaves field operators (gradient, divergence, curl), wave behaviour (propagation, interference, coupling), and spectral structure (harmonics, noise, resonances) into a coherent whole—all phenomena in the universe are the geometric dance of waves and operators in the information field.
+Periodic Mathematics grounds itself in symmetry and directionality, taking the hierarchical ascent of symmetry groups during number system extension as its leitmotif. It defines periodicity via orbit decomposition under group actions and establishes corresponding general periodic functions for each number system. Gradient, divergence, and curl acquire unified expression through the quaternion Maxwell equations, linking interpretively to the three symmetry centres 0, 1, and $i$. Operations on waves and spectra are described categorically across five domains—Group Actions, Interactions, Representation Transforms, Domain Transforms, and Projections & Selections—with Interactions being the distinctive focus, examining how diverse periods generate novel periods, resonance, locking, and annihilation through coupling. The framework fully incorporates standard modern mathematical constructions, aiming to provide a unified mathematical language for periodic phenomena.
 
 ---
 
 <div align="center">
 
-**Cyclical Mathematics**
-<br>
-© 2026 Fu Zi
-<br>
-License: MIT (Because the universe is open source)
+### Periodic Mathematics
+
+© 2026 Fuzi
+
+**Licence: MIT**
 
 </div>
+
+---
