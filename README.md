@@ -1,8 +1,9 @@
 # Periodic Mathematics
 
-> “The Trendency evolves into the Unary; The Unary evolves into the Binary; The Binary evolves into the Ternary; The Ternary evolves into the Universe.” — *Tao Te Ching*  
+> “The Tendency evolves into the Unary; The Unary evolves into the Binary; The Binary evolves into the Ternary; The Ternary evolves into the Universe.” — *Tao Te Ching*  
+> *These renderings adapt classical Chinese philosophical terms to the core concepts of Periodic Mathematics: "tendency" denotes the intrinsic evolutionary orientation of information systems, unifying the metaphysical "Tao" and the kinematic "advance" (wang) of the I Ching with the theory's focus on directionality and periodic evolution.*  
 > “Mathematics is the language with which God has written the universe.” — Galileo Galilei  
-> “No plain always slopes, nor trendency always closes.” — *I Ching*  
+> “No plain always slopes, nor tendency always closes.” — *I Ching*  
 
 ---
 
