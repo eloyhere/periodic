@@ -6,7 +6,7 @@
 #include "periodicity.h"
 #include <initializer_list>
 
-namespace peridicity {
+namespace periodicity {
 
     template<typename Number>
     const Number pi = static_cast<Number>(3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342);
@@ -45,7 +45,7 @@ namespace peridicity {
     Angle<Number, -pi<Number>, pi<Number>> arcsine(const Number& value);
 
     template<typename Number>
-    Angle<Number, -pi<Number>, pi<Number>> cosine(const Number& value);
+    Angle<Number, -pi<Number>, pi<Number>> arccosine(const Number& value);
 
     template<typename Number>
     Angle<Number, -pi<Number>, pi<Number>> arctangent(const Number& value);
@@ -1212,38 +1212,38 @@ namespace peridicity {
 
 namespace std {
     template<typename Number>
-    struct tuple_size<peridicity::Complex<Number>> : integral_constant<size_t, 2> {};
+    struct tuple_size<periodicity::Complex<Number>> : integral_constant<size_t, 2> {};
 
     template<typename Number>
-    struct tuple_element<0, peridicity::Complex<Number>> {
+    struct tuple_element<0, periodicity::Complex<Number>> {
         using type = Number;
     };
 
     template<typename Number>
-    struct tuple_element<1, peridicity::Complex<Number>> {
+    struct tuple_element<1, periodicity::Complex<Number>> {
         using type = Number;
     };
 
     template<size_t Index, typename Number>
-    Number get(const peridicity::Complex<Number>& complex) {
+    Number get(const periodicity::Complex<Number>& complex) {
         return complex.template get<Index>();
     }
 
     template<typename Number>
-    struct tuple_size<peridicity::Quaternion<Number>> : integral_constant<size_t, 4> {};
+    struct tuple_size<periodicity::Quaternion<Number>> : integral_constant<size_t, 4> {};
 
     template<typename Number>
-    struct tuple_element<0, peridicity::Quaternion<Number>> {
+    struct tuple_element<0, periodicity::Quaternion<Number>> {
         using type = Number;
     };
 
     template<typename Number>
-    struct tuple_element<1, peridicity::Quaternion<Number>> {
+    struct tuple_element<1, periodicity::Quaternion<Number>> {
         using type = Number;
     };
 
     template<size_t Index, typename Number>
-    Number get(const peridicity::Quaternion<Number>& quaternion) {
+    Number get(const periodicity::Quaternion<Number>& quaternion) {
         return quaternion.template get<Index>();
     }
 }

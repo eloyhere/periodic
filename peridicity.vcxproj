@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="calendar.h" />
+    <ClInclude Include="geometry.h" />
     <ClInclude Include="numerical.h" />
     <ClInclude Include="periodicity.h" />
   </ItemGroup>

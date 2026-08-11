@@ -1,6 +1,6 @@
 #pragma once
 #include <type_traits>
-namespace peridicity {
+namespace periodicity {
 
     template<typename Number>
     struct IsNatural : std::conjunction<std::is_unsigned<Number>, std::is_integral<Number>> {};
