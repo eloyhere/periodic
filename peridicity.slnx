@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="peridicity.vcxproj" Id="f68abac5-d7ee-4d66-84d3-7bb030a9c115" />
+</Solution>
